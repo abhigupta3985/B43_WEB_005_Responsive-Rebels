@@ -32,3 +32,65 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+
+
+// ----------drops section-----------
+
+// Elements
+const cardSlider = document.getElementById('cardSlider');
+const sliderNextBtn = document.getElementById('sliderNext');
+const getAppBtn = document.getElementById('getAppBtn');
+const appModal = document.getElementById('appModal');
+const closeModal = document.getElementById('closeModal');
+const productCards = document.querySelectorAll('.product-card');
+
+// Variables for slider
+let currentPosition = 0;
+const cardWidth = 215; // Card width + gap
+const visibleCards = 7;
+const totalCards = productCards.length;
+const maxSlides = totalCards - visibleCards;
+
+// Next button click handler
+sliderNextBtn.addEventListener('click', () => {
+    if (currentPosition < maxSlides) {
+        currentPosition++;
+        updateSliderPosition();
+    } else {
+        // Reset to beginning when reached the end
+        currentPosition = 0;
+        updateSliderPosition();
+    }
+});
+
+// Update slider position
+function updateSliderPosition() {
+    cardSlider.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+}
+
+// Show modal when "Get the app" button is clicked
+getAppBtn.addEventListener('click', () => {
+    appModal.style.display = 'flex';
+});
+
+// Show modal when any product card is clicked
+productCards.forEach(card => {
+    card.addEventListener('click', () => {
+        appModal.style.display = 'flex';
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    appModal.style.display = 'none';
+});
+
+// Close modal when clicking outside of it
+appModal.addEventListener('click', (e) => {
+    if (e.target === appModal) {
+        appModal.style.display = 'none';
+    }
+});
