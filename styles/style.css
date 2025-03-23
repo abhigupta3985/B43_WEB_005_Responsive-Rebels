@@ -10,6 +10,14 @@
             background-color: #f0f2f4;
         }
 
+
+        .page-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+
         /* Header Styles */
         .top-nav {
             background-color: #0046be;
@@ -311,23 +319,30 @@
         }
 
         .section-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: none;
+            text-decoration: underline;
+            text-underline-offset: 10px;
         }
 
         .arrivals-grid {
             display: flex;
-            gap: 15px;
+            justify-content: space-evenly;
+            gap: 20px;
             overflow-x: auto;
+            padding: 10px 0;
         }
 
         .arrival-card {
-            min-width: 200px;
-            border: 1px solid #ddd;
+            width: 260px;
+            flex: 0 0 260px;
+            border: 1px solid #eee;
+            border-radius: 5px;
             padding: 15px;
+     
         }
 
         .arrival-image {
@@ -338,9 +353,12 @@
         }
 
         .arrival-title {
-            font-size: 12px;
+            font-size: 13px;
+            color: #0046be;
             margin-bottom: 5px;
             line-height: 1.4;
+            text-align: left;
+            width: 100%;
         }
 
         /* Navigation arrows */
@@ -418,7 +436,7 @@
     }
 
     .app-exclusive-icon {
-        background-color: #ffe000;
+        background-color: yellow;
         color: black;
         width: 20px;
         height: 20px;
@@ -427,7 +445,7 @@
         justify-content: center;
         margin-right: 8px;
         font-size: 12px;
-    }
+    } 
 
     .drops-logo {
         display: flex;
@@ -458,7 +476,8 @@
         background-color: #ffe000;
         color: black;
         border: none;
-        padding: 12px;
+        border-radius: 6px;
+        padding: 6px;
         width: 100%;
         font-weight: bold;
         cursor: pointer;
@@ -647,3 +666,425 @@
         color: #0046be;
         font-weight: bold;
     }
+
+
+
+
+
+
+
+
+    /* <!-- ---------------footer-------------- --> */
+
+    .footer-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Top icons section (1st horizontal section) */
+    .support-icons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 0;
+        width: 100%;
+        margin: 20px 0;
+    }
+    
+    .support-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 20%;
+    }
+    
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+    
+    .support-item a {
+        color: #0046BE;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.4;
+        margin-top: 5px;
+    }
+    
+    .support-item a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Divider */
+    .divider {
+        height: 1px;
+        background-color: #ddd;
+        margin: 20px 0;
+    }
+    
+    /* Middle section (2nd horizontal section) */
+    .middle-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    
+    /* Left columns in middle section */
+    .columns-container {
+        display: flex;
+        width: 75%;
+    }
+    
+    .footer-column {
+        width: 33.33%;
+        padding-right: 20px;
+    }
+    
+    .footer-column h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: bold;
+    }
+    
+    .footer-column h3.second-heading {
+        margin-top: 30px;
+    }
+    
+    .footer-column ul {
+        list-style: none;
+        margin-bottom: 25px;
+    }
+    
+    .footer-column li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-column a {
+        color: #0046BE;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .footer-column a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Right section in middle (Sign in/Newsletter) */
+    .account-section {
+        width: 25%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .account-block {
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .account-block:last-child {
+        border-bottom: none;
+    }
+    
+    .account-links a {
+        color: #0046BE;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .account-links a:hover {
+        text-decoration: underline;
+    }
+    
+    .newsletter-heading {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+    }
+    
+    .newsletter-form input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px 0 0 3px;
+        font-size: 14px;
+    }
+    
+    .newsletter-form button {
+        background-color: #0046BE;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    
+    /* App download section */
+    .app-download {
+        display: flex;
+        align-items: center;
+    }
+    
+    .app-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    
+    .app-text {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.4;
+    }
+    
+    .app-text a {
+        color: #0046BE;
+        text-decoration: none;
+    }
+    
+    /* Social media icons */
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-icon {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Feedback section */
+    .feedback-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .feedback-link {
+        color: #0046BE;
+        text-decoration: none;
+    }
+    
+    .feedback-link:hover {
+        text-decoration: underline;
+    }
+    
+    /* Legal section (3rd horizontal section) */
+    .legal-section {
+        padding: 20px 0;
+    }
+    
+    .legal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .legal-links a {
+        color: #0046BE;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    
+    .legal-links a:hover {
+        text-decoration: underline;
+    }
+    
+    .copyright {
+        font-size: 12px;
+        color: #555;
+        margin-top: 15px;
+    }
+  
+  /* Add these media queries to the existing CSS */
+@media (max-width: 992px) {
+/* Adjust the columns to be more readable on medium-sized screens */
+.columns-container {
+    width: 65%;
+}
+
+.account-section {
+    width: 35%;
+}
+}
+
+@media (max-width: 768px) {
+/* Stack middle section vertically on tablets */
+.middle-section {
+    flex-direction: column;
+}
+
+.columns-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.account-section {
+    width: 100%;
+}
+
+/* Adjust support icons for medium screens */
+.support-icons {
+    flex-wrap: wrap;
+}
+
+.support-item {
+    width: 33.33%;
+    margin-bottom: 20px;
+}
+}
+
+@media (max-width: 576px) {
+/* Adjust for mobile phones */
+/* Stack the footer columns vertically */
+.columns-container {
+    flex-direction: column;
+}
+
+.footer-column {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+}
+
+/* Make support icons 2 per row */
+.support-item {
+    width: 50%;
+    margin-bottom: 25px;
+}
+
+/* Adjust spacing */
+.footer-column h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-column h3.second-heading {
+    margin-top: 20px;
+}
+
+/* Adjust legal links */
+.legal-links {
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Feedback section adjustments */
+.feedback-section {
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Adjust form elements */
+.newsletter-form {
+    flex-direction: column;
+}
+
+.newsletter-form input {
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.newsletter-form button {
+    border-radius: 3px;
+    width: 100%;
+}
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+.footer-column li {
+    margin-bottom: 15px;
+}
+
+.footer-column a,
+.legal-links a,
+.feedback-link,
+.support-item a {
+    padding: 5px 0;
+    display: inline-block;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+}
+}
+  
+  /* Modify the legal links section for wrapping text within links */
+.legal-links {
+display: flex;
+flex-wrap: wrap; /* Allow wrapping for very small screens */
+gap: 15px;
+margin-bottom: 15px;
+}
+
+/* Style the links to allow internal text wrapping */
+.legal-links a {
+color: #333;
+text-decoration: none;
+font-size: 12px;
+display: inline-block;
+white-space: normal; /* Allow text to wrap within each link */
+max-width: 120px; /* Limit width to force wrapping of long link text */
+}
+
+/* For medium screens - ensure all links stay on one row but let text wrap inside */
+@media (min-width: 769px) and (max-width: 1200px) {
+.legal-links {
+    flex-wrap: nowrap; /* Keep all links on one row */
+}
+
+.legal-links a {
+    max-width: none; /* Remove max-width */
+    width: auto; /* Let links take necessary space */
+    white-space: normal; /* Allow text to wrap within each link */
+}
+}
+
+/* For small screens - let links form two rows with 5 in each */
+@media (max-width: 768px) {
+.legal-links {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Create 5 columns */
+    grid-template-rows: repeat(2, auto); /* Create 2 rows */
+    gap: 15px 10px; /* Row gap 15px, column gap 10px */
+}
+
+.legal-links a {
+    max-width: none; /* Remove max-width */
+    width: 100%; /* Take full width of grid cell */
+}
+}
+
+/* For very small screens - allow more wrapping for better spacing */
+@media (max-width: 480px) {
+.legal-links {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for very small screens */
+    grid-template-rows: repeat(5, auto); /* 5 rows */
+}
+}
