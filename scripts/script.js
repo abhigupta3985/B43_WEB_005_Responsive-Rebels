@@ -94,3 +94,25 @@ appModal.addEventListener('click', (e) => {
         appModal.style.display = 'none';
     }
 });
+
+
+
+    /* <!-- ---------------footer-------------- --> */
+
+// Add newsletter form functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            if (email) {
+                alert('Thank you for signing up for our newsletter!');
+                this.querySelector('input').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    }
+});
