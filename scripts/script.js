@@ -34,12 +34,65 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const categoriesGrid = document.querySelector('.categories-grid');
+    const leftArrow = document.querySelector('.arrow-left');
+    const rightArrow = document.querySelector('.arrow-right');
+    const categoryItems = document.querySelectorAll('.category-item');
+    
+    const totalProducts = categoryItems.length;
+    
+    const visibleProducts = 9;
+    
+    const itemWidth = 150; 
+    
+    const maxPages = Math.ceil(totalProducts / visibleProducts);
+    
+    let currentPage = 0;
+    
+    function updateArrows() {
+      leftArrow.style.display = currentPage === 0 ? 'none' : 'flex';
+      
+      rightArrow.style.display = currentPage >= maxPages - 1 ? 'none' : 'flex';
+    }
+    
+    function slideTo(pageIndex) {
+      if (pageIndex < 0) pageIndex = 0;
+      if (pageIndex >= maxPages) pageIndex = maxPages - 1;
+      
+      const translateX = -pageIndex * (visibleProducts * itemWidth);
+      
+      categoriesGrid.style.transform = `translateX(${translateX}px)`;
+      
+      currentPage = pageIndex;
+      
+      updateArrows();
+    }
+    
+    updateArrows();
+    
+    leftArrow.addEventListener('click', function() {
+      slideTo(currentPage - 1);
+    });
+    
+    rightArrow.addEventListener('click', function() {
+      slideTo(currentPage + 1);
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') {
+        slideTo(currentPage - 1);
+      } else if (e.key === 'ArrowRight') {
+        slideTo(currentPage + 1);
+      }
+    });
+  });
+
 
 
 
 // ----------drops section-----------
 
-// Elements
 const cardSlider = document.getElementById('cardSlider');
 const sliderNextBtn = document.getElementById('sliderNext');
 const getAppBtn = document.getElementById('getAppBtn');
@@ -47,48 +100,40 @@ const appModal = document.getElementById('appModal');
 const closeModal = document.getElementById('closeModal');
 const productCards = document.querySelectorAll('.product-card');
 
-// Variables for slider
 let currentPosition = 0;
-const cardWidth = 215; // Card width + gap
+const cardWidth = 215; 
 const visibleCards = 7;
 const totalCards = productCards.length;
 const maxSlides = totalCards - visibleCards;
 
-// Next button click handler
 sliderNextBtn.addEventListener('click', () => {
     if (currentPosition < maxSlides) {
         currentPosition++;
         updateSliderPosition();
     } else {
-        // Reset to beginning when reached the end
         currentPosition = 0;
         updateSliderPosition();
     }
 });
 
-// Update slider position
 function updateSliderPosition() {
     cardSlider.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
 }
 
-// Show modal when "Get the app" button is clicked
 getAppBtn.addEventListener('click', () => {
     appModal.style.display = 'flex';
 });
 
-// Show modal when any product card is clicked
 productCards.forEach(card => {
     card.addEventListener('click', () => {
         appModal.style.display = 'flex';
     });
 });
 
-// Close modal
 closeModal.addEventListener('click', () => {
     appModal.style.display = 'none';
 });
 
-// Close modal when clicking outside of it
 appModal.addEventListener('click', (e) => {
     if (e.target === appModal) {
         appModal.style.display = 'none';
